@@ -1,9 +1,10 @@
 import { User } from '../controllers/types';
+import faker from 'faker';
 
 export function newUser(): User {
 	return {
-		id: 10,
-		username: 'theUser',
+		id: faker.random.number(),
+		username: faker.name.firstName(),
 		firstName: 'John',
 		lastName: 'James',
 		email: 'john@email.com',

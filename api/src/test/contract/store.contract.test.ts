@@ -16,7 +16,7 @@ makeTest('Contract Store Controller', () => {
 		swagger = new SwaggerCheck('./openapiswagger.yml');
 	});
 
-	test('Add new Order - 200 OK', async () => {
+	test('Add new Order - 200 OK - check swagger specification', async () => {
 		order = newOrder();
 		const response: Response = await storeController.place_an_order(order);
 		const responseBody = JSON.parse(response.body);
@@ -25,7 +25,7 @@ makeTest('Contract Store Controller', () => {
 		expect(swaggerErrors.length === 0).toBeTruthy();
 	});
 
-	test('Get inventories by status - 200 OK', async () => {
+	test('Get inventories by status - 200 OK - check swagger specification', async () => {
 		const response: Response = await storeController.inventories_by_status();
 		const responseBody = JSON.parse(response.body);
 		const swaggerErrors = swagger.validateSchema('/store/inventory', 'get', response.statusCode, responseBody);
@@ -33,7 +33,7 @@ makeTest('Contract Store Controller', () => {
 		expect(swaggerErrors.length === 0).toBeTruthy();
 	});
 
-	test('Find purcharse order by id - 200 OK', async () => {
+	test('Find purcharse order by id - 200 OK - check swagger specification', async () => {
 		const response: Response = await storeController.find_purcharse_order_by_id(order.id);
 		const responseBody = JSON.parse(response.body);
 		const swaggerErrors = swagger.validateSchema('/store/order/{orderId}', 'get', response.statusCode, responseBody);
@@ -41,7 +41,7 @@ makeTest('Contract Store Controller', () => {
 		expect(swaggerErrors.length === 0).toBeTruthy();
 	});
 
-	test('Find purcharse order by id - 404 not found', async () => {
+	test('Find purcharse order by id - 404 not found - check swagger specification', async () => {
 		const response: Response = await storeController.find_purcharse_order_by_id(99999999);
 		const responseBody = JSON.parse(JSON.stringify(response));
 		expect(responseBody.message).toEqual('Response code 404 (Not Found)');
