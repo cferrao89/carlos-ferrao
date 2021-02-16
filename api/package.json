@@ -17,6 +17,11 @@
 			"src/test/**/*.test.ts"
 		]
 	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run lint"
+		}
+	},
 	"keywords": [
 		"api",
 		"testing"
