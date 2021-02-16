@@ -44,6 +44,8 @@ class DashboardPO extends PageObjectAndroid {
 	moveToUp = (ele) => super.moveToUp(this[ele]);
 
 	moveToDown = (ele) => super.moveToDown(this[ele]);
+
+	getElementsBy = (ele) => super.getElementsBy(this[ele]);
 	/* #endregion */
 }
 

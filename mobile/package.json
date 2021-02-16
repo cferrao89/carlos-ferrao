@@ -7,8 +7,8 @@
 		"lib": "lib"
 	},
 	"scripts": {
-		"test:app": "jest --forceExit",
-		"test:app:debug": "jest src/test/*.test.ts --detectOpenHandles --watch --verbose=false --silent=false",
+		"test:app": "jest --runInBand --forceExit",
+		"test:app:debug": "jest src/test/*.test.ts --runInBand --detectOpenHandles --watch --verbose=false --silent=false",
 		"eslinter": "./node_modules/.bin/eslint .",
 		"update:eslinter": "node updateeslintrc.js"
 	},

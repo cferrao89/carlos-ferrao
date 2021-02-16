@@ -10,19 +10,19 @@ makeTest('Test - Add new expense', function () {
 	});
 
 	test('Mark 20.50', async function () {
-		await NewExpensePO.clickBy('two_button');
-		await NewExpensePO.clickBy('cero_button');
-		await NewExpensePO.clickBy('dot_button');
-		await NewExpensePO.clickBy('five_button');
-		await NewExpensePO.clickBy('cero_button');
+		await NewOperationPO.clickBy('two_button');
+		await NewOperationPO.clickBy('cero_button');
+		await NewOperationPO.clickBy('dot_button');
+		await NewOperationPO.clickBy('five_button');
+		await NewOperationPO.clickBy('cero_button');
 	});
 
 	test('Click on choose category', async function () {
-		await NewExpensePO.clickBy('choose_category');
+		await NewOperationPO.clickBy('choose_category');
 	});
 
 	test('Click on "Bills" category', async function () {
-		await NewExpensePO.clickOnCategory('Bills');
+		await NewOperationPO.clickOnCategory('Bills');
 	});
 
 	test('Dashboard is displayed', async function () {

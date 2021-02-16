@@ -107,6 +107,19 @@ module.exports = class PageObjectApp {
 		return driver.elementExistXpath(ele);
 	}
 
+	//Get elements
+	getElementsByXPath(ele) {
+		return driver.elementsByXPath(ele);
+	}
+
+	getElementsById(ele) {
+		return driver.elementsById(ele);
+	}
+
+	getElementsByAccessibilityId(ele) {
+		return driver.elementsByAccessibilityId(ele);
+	}
+
 	//Element get Size
 	getSizeByXPath(ele) {
 		return driver.elementByXPath(ele).getSize();

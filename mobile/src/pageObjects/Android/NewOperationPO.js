@@ -1,6 +1,6 @@
 const PageObjectAndroid = require('../../../controllers/PageObjectAndroid');
 
-class NewExpensePO extends PageObjectAndroid {
+class NewOperationPO extends PageObjectAndroid {
 	constructor() {
 		super();
 		//Start Cancel policy
@@ -43,6 +43,8 @@ class NewExpensePO extends PageObjectAndroid {
 	moveToUp = (ele) => super.moveToUp(this[ele]);
 
 	moveToDown = (ele) => super.moveToDown(this[ele]);
+
+	getElementsBy = (ele) => super.getElementsBy(this[ele]);
 	/* #endregion */
 
 	clickOnCategory(category) {
@@ -51,4 +53,4 @@ class NewExpensePO extends PageObjectAndroid {
 	}
 }
 
-module.exports = new NewExpensePO();
+module.exports = new NewOperationPO();

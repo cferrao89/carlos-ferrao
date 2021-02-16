@@ -36,6 +36,12 @@ module.exports = class PageObjectAndroid extends PageObjectApp {
 		else return super.elementExistByAccessibilityId(ele);
 	}
 
+	getElementsBy(ele) {
+		if (ele.includes('//')) return super.getElementsByXPath(ele);
+		else if (ele.includes('com.') || ele.includes(':id')) return super.getElementsById(ele);
+		else return super.getElementsByAccessibilityId(ele);
+	}
+
 	checkElementExistBy(ele) {
 		if (ele.includes('//')) return super.checkElementExistByXPath(ele);
 		else if (ele.includes('com.') || ele.includes(':id')) return super.checkElementExistById(ele);
